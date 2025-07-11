@@ -34,7 +34,8 @@ if "audio_bytes" not in st.session_state:
 
 # Audio input section
 st.subheader("🎙️ Voice Input")
-
+if "_last_audio_id" not in st.session_state:
+    st.session_state._last_audio_id = 0
 # Microphone recorder
 audio = mic_recorder(start_prompt="🎙️ Start Recording", stop_prompt="⏹️ Stop", just_once=True, key="mic")
 
